@@ -1,6 +1,6 @@
 function compose(...funcs) {
   return function composed(...args) {
-    return funcs.reduce(
+    return funcs.reduceRight(
       (result, func) => [func.call(this, ...result)],
       args
     )[0];
@@ -25,7 +25,7 @@ const decorated1 = compose(addPrefix, addSuffix, toUppercase);
 const decorated2 = compose(toUppercase, addPrefix, addSuffix);
 
 // Call the piped function with the input string
-const result1 = decorated1("hello"); // PREFIX-HELLO-SUFFIX
-const result2 = decorated2("hello"); // prefix-HELLO-suffix
+const result1 = decorated1("hello"); // prefix-HELLO-suffix
+const result2 = decorated2("hello"); // PREFIX-HELLO-SUFFIX
 
 console.log({ result1, result2 });
