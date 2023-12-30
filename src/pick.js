@@ -9,11 +9,11 @@ function pick(obj, keys) {
 
 const obj = {
   id: 1,
-  name: "Paul",
+  name: "Lasitha",
   password: "82ada72easd7",
   role: "admin",
-  website: "https://www.paulsblog.dev",
+  website: "https://www.lasitha.dev",
 };
 
 const selected = pick(obj, ["name", "website"]);
-console.log(selected); // { name: 'Paul', website: 'https://www.paulsblog.dev' }
+console.log(selected); // { name: 'Lasitha', website: 'https://www.lasitha.dev' }
